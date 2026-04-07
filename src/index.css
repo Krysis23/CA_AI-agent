@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 222 25% 6%;
+    --foreground: 210 40% 96%;
+
+    --card: 222 20% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 222 20% 10%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 230 80% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 60% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 222 15% 16%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 230 80% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 65% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --border: 222 15% 18%;
+    --input: 222 15% 14%;
+    --ring: 230 80% 60%;
+
+    --radius: 0.75rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(230, 80%, 60%), hsl(270, 60%, 55%));
+    --gradient-subtle: linear-gradient(135deg, hsl(222, 20%, 12%), hsl(222, 20%, 8%));
+    --gradient-glow: 0 0 20px hsl(230 80% 60% / 0.3), 0 0 60px hsl(270 60% 55% / 0.15);
+
+    --sidebar-background: 222 20% 8%;
+    --sidebar-foreground: 210 30% 80%;
+    --sidebar-primary: 230 80% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 15% 14%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 222 15% 15%;
+    --sidebar-ring: 230 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-primary {
+    box-shadow: var(--gradient-glow);
+  }
+
+  .glow-hover:hover {
+    box-shadow: var(--gradient-glow);
+  }
+
+  .glass {
+    background: hsl(222 20% 10% / 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(222 15% 18% / 0.5);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(222 15% 20%) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(222 15% 22%);
+    border-radius: 20px;
+  }
+}
